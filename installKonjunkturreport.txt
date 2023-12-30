@@ -1,1 +1,1 @@
-npm install; npm install chart.js
+npm install; npm install chart.js; npm install date-fns chartjs-adapter-date-fns --save

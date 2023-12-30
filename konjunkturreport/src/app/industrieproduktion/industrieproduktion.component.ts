@@ -3,43 +3,48 @@ import Chart from 'chart.js/auto';
 
 
 
-const data =  {
-        datasets: [{
-            type: 'bar',
-            label: 'Bar Dataset',
-            data: [10, 20, 30, 40],
-            order: 2
-        },
-        {
-            type: 'bar',
-            label: 'Bar Dataset 2',
-            data: [10, 20, 30, 40],
-            order: 2
-        },
-        {
-            type: 'line',
-            label: 'Line Dataset',
-            data: [10, 20, 30, 40],
-            order: 1
-        }],
-        labels: ['January', 'February', 'March', 'April']
-    };
-
-
 const options = {
   plugins: {
     title: {
       display: true,
-      text: 'Chart.js Bar Chart - Stacked'
+      text: 'Industrieproduktion',
+      color: "black",
+      font: {
+        size: 19
+      }
     },
+    legend: {
+      display: true,
+      reverse: true,
+      labels: {
+        color: "black"
+      }
+    }
   },
   responsive: true,
   scales: {
     x: {
       stacked: true,
+      grid: {
+          display: false
+      },
+      ticks: {
+        color: "black"
+      }
     },
     y: {
-      stacked: true
+      stacked: true,
+      title: {
+        display: true,
+        text: "\u0394 Vorjahr",
+        color: "black"
+      },
+      ticks: {
+        color: "black",
+        callback: function(value: any, index: any, ticks: any) {
+            return value + "%";
+        }
+      }
     }
   }
 }
@@ -61,25 +66,47 @@ export class IndustrieproduktionComponent {
 
     this.chart = new Chart('indprod', {
     data: {
+        labels: ['January', 'February', 'March', 'April'],
         datasets: [{
             type: 'bar',
-            label: 'Bar Dataset',
+            label: 'Eurozone',
             data: [10, 20, 30, 40],
-            order: 2
+            order: 2,
+            borderWidth: 2,
+            borderColor: "black",
+            backgroundColor: "blue",
+            borderSkipped: false,
         },
         {
             type: 'bar',
-            label: 'Bar Dataset 2',
+            label: 'USA',
             data: [-10, -20, 30, 40],
-            order: 2
+            order: 2,
+            borderWidth: 2,
+            borderColor: "black",
+            backgroundColor: "green",
+            borderSkipped: false
         },
         {
             type: 'line',
-            label: 'Line Dataset',
+            label: 'Welt',
             data: [10, 20, 30, 40],
-            order: 1
-        }],
-        labels: ['January', 'February', 'March', 'April']
+            order: 1,
+            borderWidth: 2,
+            borderColor: "red",
+            backgroundColor: "red",
+            pointRadius: 0
+        },
+        {
+            type: 'line',
+            label: 'Finanzkrise',
+            data: [8, 1, 50, 2],
+            order: 1,
+            borderWidth: 2,
+            borderColor: "yellow",
+            backgroundColor: "yellow",
+            pointRadius: 0
+        }]
     },
     options: options
   });

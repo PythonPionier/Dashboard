@@ -3,24 +3,46 @@ import Chart from 'chart.js/auto';
 
 
 
-const labels = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul"];
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: 'Eurozone',
-      data: [1,2,3,4,5,6,7],
-      backgroundColor: "blue"
+const data =  {
+        datasets: [{
+            type: 'bar',
+            label: 'Bar Dataset',
+            data: [10, 20, 30, 40],
+            order: 2
+        },
+        {
+            type: 'bar',
+            label: 'Bar Dataset 2',
+            data: [10, 20, 30, 40],
+            order: 2
+        },
+        {
+            type: 'line',
+            label: 'Line Dataset',
+            data: [10, 20, 30, 40],
+            order: 1
+        }],
+        labels: ['January', 'February', 'March', 'April']
+    };
+
+
+const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart - Stacked'
     },
-    {
-      label: 'USA',
-      data: [1,2,3,4,5,6,7],
-      backgroundColor: "green",
+  },
+  responsive: true,
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true
     }
-  ]
-};
-
-
+  }
+}
 
 
 @Component({
@@ -38,28 +60,29 @@ export class IndustrieproduktionComponent {
   ngOnInit() {
 
     this.chart = new Chart('indprod', {
-      data: {
-        datasets: [
-          {
+    data: {
+        datasets: [{
             type: 'bar',
             label: 'Bar Dataset',
-            data: [10, 20, 30, 40]
-          },
-          {
+            data: [10, 20, 30, 40],
+            order: 2
+        },
+        {
             type: 'bar',
             label: 'Bar Dataset 2',
-            data: [10, 20, 30, 40]
-          },
-          {
+            data: [-10, -20, 30, 40],
+            order: 2
+        },
+        {
             type: 'line',
             label: 'Line Dataset',
             data: [10, 20, 30, 40],
             order: 1
-          }
-        ],
+        }],
         labels: ['January', 'February', 'March', 'April']
-      },
-    });
+    },
+    options: options
+  });
 
   }
 

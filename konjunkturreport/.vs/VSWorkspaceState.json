@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\industrieproduktion",
+    "\\src\\app\\tsplot"
   ],
-  "SelectedNode": "\\src\\app",
+  "SelectedNode": "\\src\\app\\industrieproduktion\\industrieproduktion.component.ts",
   "PreviewInSolutionExplorer": false
 }

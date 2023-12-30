@@ -57,7 +57,6 @@ const options = {
 })
 export class IndustrieproduktionComponent {
 
-  title = 'ng-chart';
   chart: any = [];
   constructor() {}
 

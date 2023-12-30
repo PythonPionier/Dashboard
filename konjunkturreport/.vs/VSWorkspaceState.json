@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\industrieproduktion"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\app\\industrieproduktion\\industrieproduktion.component.scss",
+  "SelectedNode": "\\src\\app",
   "PreviewInSolutionExplorer": false
 }

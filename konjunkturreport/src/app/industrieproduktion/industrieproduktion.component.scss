@@ -2,14 +2,19 @@
 
 .chart-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
 }
 
-.chart-container div{flex: 1}
-
 #indprod {
+  height: 500px;
+  flex-basis: 70%;
 }
 
 .textbox {
-  padding: 50px;
+  flex-basis: 30%;
 }
 

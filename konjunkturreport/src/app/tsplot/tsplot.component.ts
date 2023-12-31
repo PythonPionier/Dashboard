@@ -55,7 +55,7 @@ export class TsplotComponent {
         options: {
           scales: {
             x: {
-              type: "timecenter",
+              type: "time",
               time: {
                 unit: "year",
               }

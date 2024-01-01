@@ -4,7 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\industrieproduktion",
-    "\\src\\app\\tsplot"
+    "\\src\\app\\preise"
   ],
+  "SelectedNode": "\\src\\app\\industrieproduktion\\industrieproduktion.component.html",
   "PreviewInSolutionExplorer": false
 }

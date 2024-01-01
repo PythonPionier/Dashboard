@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TsplotComponent } from './tsplot.component';
+import { PreiseComponent } from './preise.component';
 
-describe('TsplotComponent', () => {
-  let component: TsplotComponent;
-  let fixture: ComponentFixture<TsplotComponent>;
+describe('PreiseComponent', () => {
+  let component: PreiseComponent;
+  let fixture: ComponentFixture<PreiseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TsplotComponent ]
+      declarations: [ PreiseComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TsplotComponent);
+    fixture = TestBed.createComponent(PreiseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

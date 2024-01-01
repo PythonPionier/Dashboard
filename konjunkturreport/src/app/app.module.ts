@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { IndustrieproduktionComponent } from './industrieproduktion/industrieproduktion.component';
-import { TsplotComponent } from './tsplot/tsplot.component';
+import { PreiseComponent } from './preise/preise.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndustrieproduktionComponent,
-    TsplotComponent
+    PreiseComponent,
   ],
   imports: [
     BrowserModule

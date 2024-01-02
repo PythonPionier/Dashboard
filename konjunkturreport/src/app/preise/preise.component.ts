@@ -20,7 +20,7 @@ export class PreiseComponent {
 
 
 const data: any = {
-  labels: ["Investitionsgüter", "Konsumgüter", "Baukosten Wohngebäude", "Vorleistungsgüter", "Metalle", "Roheisen & Stahl", "Energie", "Deutschland", "Sachsen"],
+  labels: [[["Investitions-"], ["güter"]], "Konsumgüter", "Baukosten Wohngebäude", "Vorleistungsgüter", "Metalle", "Roheisen & Stahl", "Energie", "Deutschland", "Sachsen"],
   datasets: [
     {
       label: "\u0394 Erzeugerpreise",
@@ -112,7 +112,8 @@ const options: any = {
         font: {
           family: "Arial",
           size: 16
-        }
+        },
+        maxRotation: 0
       }
     },
     lineAxis: {
@@ -128,9 +129,7 @@ const options: any = {
           family: "Arial",
           size: 10,
           weight: "bold"
-        },
-        maxRotation: 0,
-        minRotation: 0
+        }
       }
     }
   },

@@ -20,11 +20,11 @@ export class PreiseComponent {
 
 
 const data: any = {
-  labels: [[["Investitions-"], ["güter"]], "Konsumgüter", "Baukosten Wohngebäude", "Vorleistungsgüter", "Metalle", "Roheisen & Stahl", "Energie", "Deutschland", "Sachsen"],
+  labels: [["Investitions-", "güter"], ["Konsum-", "güter"], ["Baukosten von", "Wohngebäuden"], ["Vorleistungs-", "güter"], "Metalle", ["Roheisen", "& Stahl"], "Energie", "Deutschland", "Sachsen"],
   datasets: [
     {
       label: "\u0394 Erzeugerpreise",
-      data: [7.1, 14, 8.3, 25, 38, 52, 87, undefined, undefined],
+      data: [7.1, 14, 8.3, 25, 38, 52, 87, null, null],
       order: 2,
       backgroundColor: [
         "rgba(60, 179, 113, 1)",
@@ -38,33 +38,33 @@ const data: any = {
     },
     {
       label: "\u0394 Verbraucherpreise",
-      data: [undefined, undefined, undefined, undefined, undefined, undefined, undefined, 7.9, 8],
+      data: [null, null, null, null, null, null, null, 7.9, 8],
       order: 2,
       backgroundColor: [
         "rgba(0, 0, 255, .5)",
         "rgba(0, 0, 255, .8)",
       ]
     },
-    {
-      label: "\u2300 Erzeugerpreise",
-      type: "line",
-      data: [{ x: -.5, y: 34 }, { x: 6.5, y: 34 }],
-      order: 1,
-      borderColor: "black",
-      backgroundColor: "rgba(0, 0, 0, .5)",
-      pointRadius: 0,
-      xAxisID: "lineAxis"
-    },
-    {
-      label: "EZB-Zielwert",
-      type: "line",
-      data: [{ x: 6.5, y: 2 }, { x: 8.5, y: 2 }],
-      order: 1,
-      borderColor: "rgba(255, 165, 0, 1)",
-      backgroundColor: "rgba(255, 165, 0, .5)",
-      pointRadius: 0,
-      xAxisID: "lineAxis"
-    }
+    //{
+    //  label: "\u2300 Erzeugerpreise",
+    //  type: "line",
+    //  data: [{ x: -.5, y: 34 }, { x: 6.5, y: 34 }],
+    //  order: 1,
+    //  borderColor: "black",
+    //  backgroundColor: "rgba(0, 0, 0, .5)",
+    //  pointRadius: 0,
+    //  xAxisID: "lineAxis"
+    //},
+    //{
+    //  label: "EZB-Zielwert",
+    //  type: "line",
+    //  data: [{ x: 6.5, y: 2 }, { x: 8.5, y: 2 }],
+    //  order: 1,
+    //  borderColor: "rgba(255, 165, 0, 1)",
+    //  backgroundColor: "rgba(255, 165, 0, .5)",
+    //  pointRadius: 0,
+    //  xAxisID: "lineAxis"
+    //}
   ],
 }
 
@@ -112,26 +112,25 @@ const options: any = {
         font: {
           family: "Arial",
           size: 16
-        },
-        maxRotation: 0
-      }
-    },
-    lineAxis: {
-      position: "top",
-      type: "linear",
-      min: 0,
-      max: 8,
-      axis: "x",
-      display: false,
-      ticks: {
-        color: "black",
-        font: {
-          family: "Arial",
-          size: 10,
-          weight: "bold"
         }
       }
-    }
+    },
+    //lineAxis: {
+    //  position: "top",
+    //  type: "linear",
+    //  min: 0,
+    //  max: 8,
+    //  axis: "x",
+    //  display: false,
+    //  ticks: {
+    //    color: "black",
+    //    font: {
+    //      family: "Arial",
+    //      size: 10,
+    //      weight: "bold"
+    //    }
+    //  }
+    //}
   },
   plugins: {
     legend: {
@@ -157,8 +156,12 @@ const options: any = {
     tooltip: {
       mode: "index",
       callbacks: {
-        label: function (plot: any) {
-          return plot.dataset.label + ": +" + plot.parsed.y + "%";
+        title: (context: any) => {
+          //console.log(context);
+          var labTitels = context[0].label;
+          labTitels = labTitels.replaceAll("-,", "");
+          labTitels = labTitels.replaceAll(",", " ");
+          return labTitels;
         }
       }
     }

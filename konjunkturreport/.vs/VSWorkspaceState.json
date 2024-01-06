@@ -4,8 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\beschaeftigung",
-    "\\src\\app\\preise"
+    "\\src\\app\\industrieproduktion"
   ],
-  "SelectedNode": "\\src\\app\\preise\\preise.component.html",
+  "SelectedNode": "\\package-lock.json",
   "PreviewInSolutionExplorer": false
 }

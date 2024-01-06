@@ -8,6 +8,8 @@ let jsondata = JSON.parse(jsonstring);
 //console.log(jsondata.LABEL)
 
 
+
+
 const options = {
   plugins: {
     title: {
@@ -53,6 +55,7 @@ const options = {
     }
   }
 }
+
 
 
 @Component({

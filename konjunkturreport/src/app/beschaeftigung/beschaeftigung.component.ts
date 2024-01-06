@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Chart, ChartConfiguration, CoreChartOptions } from "chart.js/auto"
 
+
 @Component({
   selector: 'app-beschaeftigung',
   templateUrl: './beschaeftigung.component.html',
@@ -16,17 +17,24 @@ export class BeschaeftigungComponent {
 }
 
 
+
+
+
 const data = {
   labels: ["Logistik", "freiberufl. & techn. DL", "Information & Kommunikation", "Finanzdienste"],
-  datasets: [{
+  datasets: [
+  {
     label: "SV-Beschäftigung",
     data: [3100, 2900, 2600, -100]
-  }]
+  }
+  ]
 }
 
 
-const options = {
+const options: any = {
+  indexAxis: 'y',
 }
+
 
 
 const config: ChartConfiguration = {
@@ -34,3 +42,4 @@ const config: ChartConfiguration = {
   data: data,
   options: options
 }
+

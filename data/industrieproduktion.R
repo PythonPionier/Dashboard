@@ -1,33 +1,20 @@
 
 # install.packages("rjson")
 library(rjson)
-library(dplyr)
 
-noise1 <- rnorm(100, sd=10)
-noise2 <- rnorm(100)
-
-indprod <- data.frame(
-  LABEL = 1:100,
-  USA = rnorm(100, 2),
-  EUROPA = rnorm(100, 2),
-  FINANZKRISE = 2 + noise1 + .1*lag(noise1, 1, default = 0),
-  WELT = 2 + noise2 + .1*lag(noise2, 1, default = 0)
-)
-
-
-
-write.csv(indprod, file = "Industrieproduktion.csv")
-
-
-
+n <- 24
 indprod <- list(
-  LABEL = 1:100,
-  USA = rnorm(100, 2),
-  EUROPA = rnorm(100, 2),
-  FINANZKRISE = 2 + noise1 + .1*lag(noise1, 1, default = 0),
-  WELT = 2 + noise2 + .1*lag(noise2, 1, default = 0)
+  LABEL = as.character(seq(as.Date("2024/1/1"), by = "month", length.out = n)),
+  EUROPA = rnorm(n, 2, 5),
+  USA = rnorm(n, 2, 5),
+  CHINA = rnorm(n, 2, 5),
+  INDUSTRIE = rnorm(n, 2, 5),
+  SCHWELLE = rnorm(n, 2, 5),
+  FINANZKRISE = cumsum(rnorm(n, 0, 10)),
+  WELT = cumsum(rnorm(n, 0, 10))
 )
 
 json_string <- toJSON(indprod, indent = 0)
-write(json_string, "Industrieproduktion.json")
-write(json_string, "Industrieproduktion.txt")
+write(json_string, "data/Industrieproduktion.json")
+
+

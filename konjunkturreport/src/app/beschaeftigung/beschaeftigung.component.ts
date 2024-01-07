@@ -8,12 +8,9 @@ import { Chart, ChartConfiguration, CoreChartOptions } from "chart.js/auto"
   styleUrls: ['./beschaeftigung.component.scss']
 })
 export class BeschaeftigungComponent {
-
   chart: any = [];
   constructor() { }
-
   ngOnInit() { this.chart = new Chart('beschaeftigung', config) }
-
 }
 
 
@@ -23,16 +20,45 @@ export class BeschaeftigungComponent {
 const data = {
   labels: ["Logistik", "freiberufl. & techn. DL", "Information & Kommunikation", "Finanzdienste"],
   datasets: [
-  {
-    label: "SV-Beschäftigung",
-    data: [3100, 2900, 2600, -100]
-  }
+    {
+      label: "SV-Beschäftigung",
+      data: [3100, 2900, 2600, -100],
+      barPercentage: .67
+    }
   ]
 }
 
 
 const options: any = {
   indexAxis: 'y',
+  scales: {
+    x: {
+      ticks: {
+        color: "black",
+        font: {
+          family: "Arial",
+          size: 14
+        },
+      },
+    },
+    y: {
+      grid: {
+        display: false
+      },
+      ticks: {
+        color: "black",
+        font: {
+          family: "Arial",
+          size: 14
+        },
+      },
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
 }
 
 

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { IndustrieproduktionComponent } from './industrieproduktion/industrieproduktion.component';
 import { PreiseComponent } from './preise/preise.component';
 import { BeschaeftigungComponent } from './beschaeftigung/beschaeftigung.component';
+import { StimmungComponent } from './stimmung/stimmung.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { BeschaeftigungComponent } from './beschaeftigung/beschaeftigung.compone
     IndustrieproduktionComponent,
     PreiseComponent,
     BeschaeftigungComponent,
+    StimmungComponent,
   ],
   imports: [
     BrowserModule

@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\mybarchart",
     "\\src\\app\\myleafletmap"
   ],
-  "SelectedNode": "\\src\\app\\myleafletmap\\myleafletmap.component.scss",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

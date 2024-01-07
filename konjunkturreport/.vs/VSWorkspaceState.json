@@ -4,7 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\beschaeftigung",
-    "\\src\\app\\industrieproduktion"
+    "\\src\\app\\industrieproduktion",
+    "\\src\\app\\preise",
+    "\\src\\app\\stimmung"
   ],
+  "SelectedNode": "\\src\\app\\industrieproduktion\\industrieproduktion.component.ts",
   "PreviewInSolutionExplorer": false
 }

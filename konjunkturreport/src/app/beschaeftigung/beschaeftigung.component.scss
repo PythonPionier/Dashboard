@@ -1,0 +1,19 @@
+
+
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#beschaeftigung {
+  width: 1000px;
+  flex-basis: 70%;
+}
+
+.textbox {
+  flex-basis: 30%;
+}

@@ -88,14 +88,14 @@ const options: any = {
         color: "black",
         font: {
           family: "Arial",
-          size: 16
+          size: 14
         }
       },
       ticks: {
         color: "black",
         font: {
           family: "Arial",
-          size: 16
+          size: 14
         },
         callback: function (value: any, index: any, ticks: any) {
           return value + "%"
@@ -111,7 +111,7 @@ const options: any = {
         color: "black",
         font: {
           family: "Arial",
-          size: 16
+          size: 14
         }
       }
     },

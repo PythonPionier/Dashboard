@@ -25,52 +25,36 @@ const data: any = {
     {
       label: "\u0394 Erzeugerpreise",
       data: [7.1, 14, 8.3, 25, 38, 52, 87, null, null],
-      order: 2,
-      backgroundColor: [
-        "rgba(60, 179, 113, 1)",
-        "rgba(60, 179, 113, .9)",
-        "rgba(60, 179, 113, .8)",
-        "rgba(60, 179, 113, .7)",
-        "rgba(60, 179, 113, .6)",
-        "rgba(60, 179, 113, .5)",
-        "rgba(60, 179, 113, .4)"
-      ]
+      backgroundColor: "rgba(60, 179, 113, .5)",
+      hoverBackgroundColor: "rgba(60, 179, 113, 1)",
+      order: 2
     },
     {
       label: "\u0394 Verbraucherpreise",
       data: [null, null, null, null, null, null, null, 7.9, 8],
-      order: 2,
-      backgroundColor: [
-        "rgba(0, 0, 255, .5)",
-        "rgba(0, 0, 255, .8)",
-      ]
+      backgroundColor: "rgba(0, 0, 255, .5)",
+      hoverBackgroundColor: "rgba(0, 0, 255, 1)",
+      order: 2
     },
-    //{
-    //  label: "\u2300 Erzeugerpreise",
-    //  type: "line",
-    //  data: [{ x: -.5, y: 34 }, { x: 6.5, y: 34 }],
-    //  order: 1,
-    //  borderColor: "black",
-    //  backgroundColor: "rgba(0, 0, 0, .5)",
-    //  pointRadius: 0,
-    //  xAxisID: "lineAxis"
-    //},
-    //{
-    //  label: "EZB-Zielwert",
-    //  type: "line",
-    //  data: [{ x: 6.5, y: 2 }, { x: 8.5, y: 2 }],
-    //  order: 1,
-    //  borderColor: "rgba(255, 165, 0, 1)",
-    //  backgroundColor: "rgba(255, 165, 0, .5)",
-    //  pointRadius: 0,
-    //  xAxisID: "lineAxis"
-    //}
+    {
+      type: "line",
+      label: "Erzeugerpreise",
+      data: [34, 34, 34, 34, 34, 34, 34, null, null],
+      borderColor: "rgba(0,176,240,1)",
+      backgroundColor: "rgba(0, 176, 240, .5)"
+    },
+    {
+      type: "line",
+      label: "EZB-Zielwert",
+      data: [null, null, null, null, null, null, null, 2, 2],
+      borderColor: "rgba(255, 192, 0, 1)",
+      backgroundColor: "rgba(255,192,0,.5)"
+    }
   ],
 }
 
 
 const options: any = {
-  locale: "de-DE",
   elements: {
     bar: {
       borderColor: "black",
@@ -114,27 +98,20 @@ const options: any = {
           size: 14
         }
       }
-    },
-    //lineAxis: {
-    //  position: "top",
-    //  type: "linear",
-    //  min: 0,
-    //  max: 8,
-    //  axis: "x",
-    //  display: false,
-    //  ticks: {
-    //    color: "black",
-    //    font: {
-    //      family: "Arial",
-    //      size: 10,
-    //      weight: "bold"
-    //    }
-    //  }
-    //}
+    }
   },
   plugins: {
+    tooltip: {
+      mode: "index",
+      callbacks: {
+        title: function (context: any) {
+          //console.log(context[0].label);
+          let lab: string = context[0].label;
+          return lab.replaceAll("-,", "").replaceAll(",", " ")
+        }
+      }
+    },
     legend: {
-      reverse: true,
       title: {
         display: true,
         color: "black",
@@ -149,19 +126,7 @@ const options: any = {
         color: "black",
         font: {
           family: "Arial",
-          size: 16,
-        }
-      }
-    },
-    tooltip: {
-      mode: "index",
-      callbacks: {
-        title: (context: any) => {
-          //console.log(context);
-          var labTitels = context[0].label;
-          labTitels = labTitels.replaceAll("-,", "");
-          labTitels = labTitels.replaceAll(",", " ");
-          return labTitels;
+          size: 14,
         }
       }
     }

@@ -60,7 +60,6 @@ const options: any = {
         font: {
           family: "Arial",
           size: 14,
-          weight: "bold"
         },
       },
       ticks: {

@@ -108,6 +108,13 @@ const options: any = {
           //console.log(context[0].label);
           let lab: string = context[0].label;
           return lab.replaceAll("-,", "").replaceAll(",", " ")
+        },
+        label: function (context: any) {
+          console.log(context);
+          let label_number: number = context.parsed.y;
+          let label_rounded: number = Math.round(label_number * 100) / 100;
+          let label_string: string = label_rounded.toString().replaceAll(".", ",");
+          return " " + context.dataset.label + ": " + label_string + "%";
         }
       }
     },
